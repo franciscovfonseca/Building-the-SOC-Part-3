@@ -230,6 +230,8 @@ And also select the ☑️ **Audit Success** & ☑️ **Audit Failure** Logs fro
 
 <br>
 
+<br>
+
 >   <details close> 
 >   
 > **<summary> 💡 Summary</summary>**
@@ -274,39 +276,53 @@ This time instead of **"Basic"** we'll go to **"Custom"**.
 
 We want to configure our **Data Collection Rule** so that:
 
-1. If Malware is discovered ➜ a Log is created and it's forwarded into our Log Analytics Workspace:
+<br>
 
-Copy the following **Windows Defender Malware Detection XPath Query**.
+❶ If Malware is discovered ➜ a Log is created and it's forwarded into our **LAW**.
+
+<br>
+
+Copy the following **Windows Defender Malware Detection XPath Query**:
+
+<br>
 
 ```commandline
 Microsoft-Windows-Windows Defender/Operational!*[System[(EventID=1116 or EventID=1117)]]
 ```
 <br>
 
-And now add it to the **Add Data Source Section**:
+And now add it to the **Add Data Source Section**.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/42c1fe46-b2c3-4330-8a86-bd32748cb890)
+❷ Also if the Firewall is disabled or messed with ➜ we want the **Firewall Logs** to be forwarded to our **LAW** as well.
 
 <br>
 
-2. Also if the Firewall is disabled or messed with ➜ we want the Firewall Logs to be forwarded to our Log Analytics Workspace as well:
+Copy the following **Windows Firewall Tampering Detection XPath Query**:
 
-Copy the following **Windows Firewall Tampering Detection XPath Query**.
+<br>
 
 ```commandline
 Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(EventID=2003)]]
 ```
 <br>
 
-Again ➜ we'll add it to the **Add Data Source Section**:.
+Again ➜ we'll add it to the **Add data source** section.
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+
+<br>
 
 Click **"Save"** and we've successfully configured our Data Collection Rule with "Special Forwarding" ✅
 
 <br>
 
 <h2></h2>
+
+<br>
 
 <br>
 
@@ -336,7 +352,9 @@ If you check back to our Log Analytics Workspace ➜ go to the **"Agents"** blad
 
 ✅ The Agents should have already been Deployed and Successfully Installed on the Target Virtual Machines
 
-## Windows VM: 
+<br>
+
+### Windows VM: 
 
 <br>
 
@@ -344,7 +362,7 @@ If you check back to our Log Analytics Workspace ➜ go to the **"Agents"** blad
 
 <br>
 
-## Linux VM: 
+### Linux VM: 
 
 <br>
 
@@ -372,25 +390,19 @@ We'll Query for Logs from the VMs and their respective NSGs ➜ to make sure the
 
 <br>
 
-## Syslog:
-
-<br>
+### Syslog:
 
 ![azure portal](https://github.com/user-attachments/assets/42c1fe46-b2c3-4330-8a86-bd32748cb890)
 
 <br>
 
-## SecurityEvent:
-
-<br>
+### SecurityEvent:
 
 ![azure portal](https://github.com/user-attachments/assets/42c1fe46-b2c3-4330-8a86-bd32748cb890)
 
 <br>
 
-## AzureNetworkAnalytics_C:
-
-<br>
+### AzureNetworkAnalytics_C:
 
 ![azure portal](https://github.com/user-attachments/assets/42c1fe46-b2c3-4330-8a86-bd32748cb890)
 
