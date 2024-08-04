@@ -100,7 +100,7 @@ First ➜ make sure the **Target VMs are Running**.
 
 <br>
 
-Next ➜ go to our Log Analytics Workspacethe
+Next ➜ go to our **Log Analytics Workspace**.
 
 Inside the **"Agents"** blade ➜ click on the **"Data Collection Rules"** button
 
@@ -140,7 +140,7 @@ For the Resources we're going to ➕ **Add Resources**:
 
 <br>
 
-Now expand the **> RG-Cyber Lab** Resource Group ➜ and select ☑️ for both of our VMs ➜ click **"Apply"**:
+Now expand the **"> RG-Cyber Lab"** Resource Group ➜ and select ☑️ for both of our VMs ➜ click **"Apply"**:
 
 <br>
 
@@ -152,7 +152,7 @@ Click **"Next: Collect and deliver >"**
 
 <br>
 
-![azure portal]https://github.com/user-attachments/assets/bc591dd2-15d7-4aa7-a807-c16f48df7c34)
+![azure portal](https://github.com/user-attachments/assets/bc591dd2-15d7-4aa7-a807-c16f48df7c34)
 
 <br>
 
@@ -388,7 +388,7 @@ If you check back to our Log Analytics Workspace ➜ go to the **"Agents"** blad
 <summary> <h2>4️⃣ Query the Log Analytics Workspace for our VM Logs & NSG Logs</h2> </summary>
 <br>
 
-Ideally at this point ➜ you would start Querying Log Analytics Workspace.
+Ideally at this point ➜ you would start **Querying the Log Analytics Workspace**.
 
 We'll Query for Logs from the VMs and their respective NSGs ➜ to make sure the Logs are coming in:
 
