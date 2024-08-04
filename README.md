@@ -14,7 +14,7 @@
 <summary> <h2>1️⃣ Create a Storage Account</h2> </summary>
 <br>
   
-We'll first create an **Azure Storage Account** ➜ for us to later place the **NSG Flow Logs**.
+We'll first create an **Azure Storage Account** ➜ where we'll later place the **NSG Flow Logs**.
 
 <br>
 
@@ -28,7 +28,7 @@ We'll first create an **Azure Storage Account** ➜ for us to later place the **
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/6212a9be-938b-4627-a5f9-c5a50891b90f)
 
 <br>
 
@@ -36,7 +36,7 @@ We'll first create an **Azure Storage Account** ➜ for us to later place the **
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/e49a299a-d421-4b34-908f-871e927a5197)
 
 <br>
 
@@ -48,23 +48,29 @@ We'll first create an **Azure Storage Account** ➜ for us to later place the **
 <summary> <h2>2️⃣ Enable NSG Flow Logs for Target VMs</h2> </summary>
 <br>
 
-Go to **"Network Security Groups"** ➜ pick one of the NSGs attached a target VM.
+Go to **"Network Security Groups"** ➜ pick one of the **NSGs** attached to one of the Target VMs ➜ I picked our ```windows-vm-nsg```
 
 Go to the **"NSG flow logs"** blade ➜ and click on the **"Create flow log"** button:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/19b136ee-45f4-432a-bb60-76924f070822)
 
 <br>
 
 Click on ➕ **Select resource**
 
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/28cd6acc-58c7-40b1-87b7-ba9a40f7e3eb)
+
+<br>
+
 Select both ☑️ ```windows-vm-nsg``` & ☑️ ```linux-vm-nsg``` ➜ **Confirm selection**
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/47ac5ab7-c991-4ecb-91b8-e0217206e3aa)
 
 <br>
 
@@ -100,19 +106,19 @@ Inside the **"Agents"** blade ➜ click on the **"Data Collection Rules"** butto
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/26202b5d-865e-4503-88c3-33bd59852387)
 
 <br>
 
-We'll then **"Create data collection rule"**:
+We'll then click on **"Create data collection rule"**:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/e5499a64-ff0f-4bf1-96e3-1f8e61b9d818)
 
 <br>
 
-We'll create the New Data Collection Rule with the following details:
+We'll create the new **Data Collection Rule** with the following details:
 - **Rule Name**: ```dcr-all-vms``` ➜ 💡 this stands for 1 single DCR that will apply to all of our VMs
 - **Resource group**: ```RG-Cyber-Lab```
 - **Region**: ```East US``` ➜ ⚠️ make sure you put it in the **Same Region as you Target VMs**, otherwise it won't work!
@@ -122,7 +128,7 @@ Then click **"Next"** to reach the **Resources** tab:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/1182e5ab-4450-494b-845b-1bb81181e2e5)
 
 <br>
 
@@ -130,7 +136,7 @@ For the Resources we're going to ➕ **Add Resources**:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/652c62e3-4ce0-4ead-ae96-0db9d6a62328)
 
 <br>
 
@@ -138,7 +144,7 @@ Now expand the **> RG-Cyber Lab** Resource Group ➜ and select ☑️ for both 
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/d9eb7c7d-6b72-493f-94ed-f86e0e1d57fb)
 
 <br>
 
@@ -146,7 +152,7 @@ Click **"Next: Collect and deliver >"**
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/b493d51f-6344-4534-9ed2-ee8aebe0810e)
 
 <br>
 
@@ -182,7 +188,7 @@ After setting that up ➜ click on the **"Next : Destination"** button:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/3f969ca2-b96f-4e94-a065-2ace3c4a2429)
 
 <br>
 
@@ -192,7 +198,7 @@ Click **"Add data source"**:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/43738ded-e834-4d1f-9dec-f67c472399fc)
 
 <br>
 
@@ -200,7 +206,7 @@ Now click on the ➕ **Add data source** button again:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/1b76c93b-8cd1-4e8b-81ea-17f1ba9a4347)
 
 <br>
 
@@ -223,6 +229,10 @@ The next one is going to be **"Windows Event Logs"**.
 We're going to select the ☑️ **Information** Logs from **"Application"** type.
 
 And also select the ☑️ **Audit Success** & ☑️ **Audit Failure** Logs from the **"Security"** type.
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/b3fcd5c3-1678-41f3-a87c-33e6e5e834a9)
 
 <br>
 
@@ -270,7 +280,7 @@ This time instead of **"Basic"** we'll go to **"Custom"**.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/075f495e-6c91-4b9a-996e-ebadfd86db66)
+![azure portal](https://github.com/user-attachments/assets/d5a9ff05-ea0d-4dc3-8871-07c0c91bcbec)
 
 <br>
 
